@@ -33,6 +33,13 @@ public:
             head = newNode;
         }
     }
+    void print_List(){
+        Node* temp = head;
+        while(temp != nullptr){
+            cout<<temp->data<<endl;
+            temp=temp->next;   
+        }
+    }
 
 };
 int main(){
@@ -40,5 +47,6 @@ int main(){
     l1.push_front(10);
     l1.push_front(20);
     l1.push_front(30);
+    l1.print_List();
     return 0;
 }
