@@ -55,6 +55,45 @@ public:
         temp->next = NULL;
         delete temp;
     }
+
+    void pob_back(){
+        if(head == NULL){
+            cout<<"Linked List is Empty"<<endl;
+            return;
+
+        }
+        Node* temp = head;
+        while(temp->next != tail ){
+            temp = temp->next;
+
+        }
+        temp->next = NULL;
+        delete tail;
+        tail = temp;
+    }
+
+    void insert(int val,int pos){
+        if(pos<0){
+            cout<<"Invalid position"<<endl;
+            return ;
+        }
+        if(pos==0){
+            push_front(val);
+            return ;
+        }
+        Node* temp = head;
+        for(int i=0;i<pos-1;i++){
+            if(temp == NULL){
+                return ;
+            }
+            temp=temp->next;
+        }
+
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
     void print_List(){
         Node* temp = head;
         while(temp != nullptr){
@@ -74,6 +113,10 @@ int main(){
 
     l1.print_List();
     l1.pop_front();
+    l1.print_List();
+    l1.pob_back();
+    l1.print_List();
+    l1.insert(52,1);
     l1.print_List();
 
     return 0;
