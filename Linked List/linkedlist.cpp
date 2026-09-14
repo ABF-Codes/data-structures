@@ -69,7 +69,7 @@ public:
         return;
 
         }
-        
+
         Node* temp = head;
         while(temp->next != tail ){
             temp = temp->next;
@@ -94,7 +94,7 @@ public:
             if(temp == NULL){
                 return ;
             }
-            temp=temp->next;
+            temp = temp->next;
         }
 
         Node* newNode = new Node(val);
