@@ -36,9 +36,10 @@ public:
     void print_List(){
         Node* temp = head;
         while(temp != nullptr){
-            cout<<temp->data<<endl;
+            cout<<temp->data<<"->";
             temp=temp->next;   
         }
+            cout<<"NULL";
     }
 
 };
