@@ -62,6 +62,14 @@ public:
             return;
 
         }
+
+        if(head == tail){
+        delete head;
+        head = tail = NULL;
+        return;
+
+        }
+        
         Node* temp = head;
         while(temp->next != tail ){
             temp = temp->next;
@@ -94,11 +102,24 @@ public:
         temp->next = newNode;
     }
 
+    int search(int key){
+        Node* temp = head;
+        int idx=0; 
+        while(temp != NULL ){
+            if(temp->data == key){
+                return idx;
+            }
+            temp=temp->next; 
+            idx++;
+        }
+        return -1;
+    }
+
     void print_List(){
         Node* temp = head;
         while(temp != nullptr){
             cout<<temp->data<<"->";
-            temp=temp->next;   
+             temp=temp->next;
         }
             cout<<"NULL"<<endl;
     }
@@ -118,6 +139,7 @@ int main(){
     l1.print_List();
     l1.insert(52,1);
     l1.print_List();
+    cout<<l1.search(52);
 
     return 0;
 }
